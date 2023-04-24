@@ -1,0 +1,28 @@
+<style type="text/css">
+  .navbar {
+  background-color: darkred;
+  padding-left: 10px;
+}
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-dark red">
+  <img class="rounded" src="https://cdn-icons-png.flaticon.com/512/48/48968.png" width="60" height="55"/ ><h4 class="pt-3">UTube</h4>&nbsp&nbsp&nbsp
+  <a class="navbar-brand " href="{% url 'mainpage'%}"><button type="button" class="btn btn-dark mb-3">Home</button></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'aboutus'%}"><button type="button" class="btn btn-dark mb-3">About Us</button></span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'contact'%}"><button type="button" class="btn btn-dark mb-3">Contact</button></a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ms-auto mb-lg-3">
+        <a class="nav-link " href="{% url 'usersignup'%}"><button type="button" class="btn btn-dark ">Logout</button></a>
+    </ul>
+  
+  </div>
+</nav>

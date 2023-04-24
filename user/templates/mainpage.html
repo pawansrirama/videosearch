@@ -1,0 +1,19 @@
+{% extends "base.html "%}
+
+{% block content %}
+	
+	<div class="container-fluid ">
+    <div class="col-md-10 offset-md-1">
+        <br>
+        <div class="row ">
+            {% for i  in video_details %}
+            <div class="col-md-3 p-2">
+				<a href="{% url 'details_video' i.id %}"><img src="{{ i.thumbnail.url }}" class="card-img-top" height="150px"></a>
+                <label class="bg-black text-white p-2 rounded ">{{i.title }}</label>
+                <label class="bg-black text-white pb-5 rounded ">{{i.uploaded_time }}</label>
+            </div>
+            {%endfor%}
+          </div>
+        </div>
+    </div>
+{% endblock content %}

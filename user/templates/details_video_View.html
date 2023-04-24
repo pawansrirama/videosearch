@@ -1,0 +1,39 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-9">
+<video width="700" height="450" controls>
+<source src="{{ video.video_file.url }}" type="video/mp4">
+</video>
+<h5 style="color: white;"><b>{{video.description}}</b></h5>
+<h7 style="color: white;">{{video.uploaded_time}}</h7>
+ </div>
+
+ <div class="col-md-3 pt-3">
+    {%for i in allvideo%}  
+    <a href="{% url 'details_video' i.id %}"><img src="{{ i.thumbnail.url }}" class="card-img-top" height="150px" ></a>
+    <p class="bg-black text-white rounded ">{{i.title }}</p>
+    <p class="bg-black text-white rounded ">{{i.uploaded_time }}</p>
+    {%endfor%}
+ </div>
+ </div>
+
+ <script>
+    // Get the container element for the i values
+    var container = document.getElementById('i-container');
+
+    // Get all the i values inside the container
+    var is = container.getElementsByTagName('p');
+
+    // Shuffle the is using the Fisher-Yates algorithm
+    for (var i = is.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        container.insertBefore(is[j], is[i]);
+    }
+</script>
+ 
+
+{% endblock content %}

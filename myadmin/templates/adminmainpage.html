@@ -1,0 +1,68 @@
+{% extends 'base1.html' %}
+
+{% block content %}
+
+
+
+<section class="bg-image"
+  style="background-image: url('https://images.pexels.com/photos/370799/pexels-photo-370799.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');  height: 150vh; overflow: auto;">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Upload Video</h2>
+
+              <form method="post" enctype="multipart/form-data">
+              		 {% csrf_token %}
+                <div class="form-outline mb-4">
+                  <div class="col-md-6 mb-4">
+                  <div class=" form-control-lg ">
+                    {{form.title}}
+                  </div>
+                  </div>
+
+                  <div class="col-md-6 mb-4">
+                  <div class=" form-control-lg ">
+                    {{form.description}}
+                  </div>
+                  </div>
+
+                  <div class="form-group border pt-2">
+                    <h6>&nbsp&nbsp&nbsp Upload Video</h6>
+                  <div class="col-md-6 mb-4">
+                  <div class=" form-control-lg ">
+                    {{form.video_file}}
+                  </div>
+                  </div>
+                </div><br>
+
+                <div class="form-group border pt-2">
+                    <h6>&nbsp&nbsp&nbsp Upload Thumbnail</h6>
+                  <div class="col-md-6 mb-4">
+                  <div class=" form-control-lg ">
+                    {{form.thumbnail}}
+                  </div>
+                  </div>
+                </div><br>
+
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit"
+                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">UPLOAD</button>
+                </div>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+{% endblock content %}
