@@ -12,8 +12,7 @@ urlpatterns = [
    path('details_video/<int:id>',views.details_video_View, name='details_video'),
    path('aboutus/',views.aboutusView,name='aboutus'),
    path('contact/',views.contactView,name='contact'),
-   re_path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}), 
-   re_path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), 
+   re_path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT})
    
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
