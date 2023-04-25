@@ -22,10 +22,10 @@ def adminLoginView(request):
 
 		if user_obj and user_obj.is_superuser:
 			login(request ,user_obj)
-			return redirect('/adminmainpage/')
+			return redirect('/admin/adminmainpage/')
 
 		messages.info(request,'invalid password')
-		return redirect('/invalidcredentials1/')
+		return redirect('/admin/invalidcredentials1/')
 
 	return render(request,'adminLogin.html')
 
@@ -34,7 +34,7 @@ def adminmainpageView(request):
 		form=videoDetailsForm(request.POST, request.FILES)
 		if form.is_valid():
 			form.save()
-			return redirect('/completed/')
+			return redirect('/admin/completed/')
 	else:
 		form=videoDetailsForm()
 	return render(request,'adminmainpage.html',{'form':form})
